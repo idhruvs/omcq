@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <div class="input-wrapper">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </div>
+
+        <ion-button (click)="login()" expand="block">Login</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-button (click)="gotoRegister()" color="warning" expand="block"
+    >Register</ion-button
+  >
+</ion-content>

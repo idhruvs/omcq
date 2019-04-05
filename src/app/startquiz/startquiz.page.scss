@@ -1,0 +1,26 @@
+.start-quiz-wrapper,
+.skip-quiz-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.start-quiz-wrapper {
+    height: 90%;
+    background: #27319a;
+
+    ion-button {
+        font-size: 30px;
+
+        // .start-quiz-button {
+    //     background: #b6a8b3;
+    // }
+    }
+}
+
+.skip-quiz-wrapper {
+    ion-button {
+        font-size: 20px;
+    }
+
+}

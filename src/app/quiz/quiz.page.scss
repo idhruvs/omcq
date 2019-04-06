@@ -1,0 +1,48 @@
+.quiz-content-wrapper {
+    --ion-background-color: transparent;
+    --color: #ffffff;
+    opacity: 0.5;
+    background: linear-gradient(rgba(47, 49, 63, 0.8), rgba(47, 49, 63, 0.8)),
+        url("/assets/images/quizbackground.jpg") !important;
+    text-align: center;
+    display: flex;
+
+    ion-card-content {
+        opacity: 0.8 !important;
+        background: #3a4046;
+        color: #ffffff !important;
+        margin-bottom: 30px;
+
+        .question-text {
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 30px;
+        }
+
+        .yay-nay-options {
+            ion-button {
+                border: 1px solid;
+                border-radius: 10px;
+                margin: 20px 40px;
+            }
+
+            ion-input {
+                font-size: 20px;
+                letter-spacing: 1px;
+                border: 1px solid;
+                padding: 5px !important;
+                margin-top: 40px;
+                border-radius: 15px;
+            }
+        }
+    }
+
+    .score-wrapper {
+        text-align: left !important;
+
+        .score {
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
+}

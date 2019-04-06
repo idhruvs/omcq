@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { Routes, RouterModule } from "@angular/router";
+import { AuthenticationService } from "../providers/authentication/authentication.service";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { QuizPage } from './quiz.page';
+import { QuizPage } from "./quiz.page";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: QuizPage
   }
 ];
@@ -21,6 +22,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [QuizPage]
+  declarations: [QuizPage],
+  providers: [AuthenticationService]
 })
 export class QuizPageModule {}

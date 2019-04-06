@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start" (click)="terminateQuiz()">
-      <ion-icon name="arrow-round-back"></ion-icon>
+      <ion-icon name="close"></ion-icon>
     </ion-buttons>
     <ion-title>
       Quiz
@@ -9,4 +9,52 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content class="quiz-content-wrapper">
+  <ion-card *ngIf="!hasQuizCompleted">
+    <ion-card-content>
+      <span class="question-text">{{ currentQuestion.question }}</span>
+
+      <div *ngIf="currentQuestion.hasOptions" class="yay-nay-options">
+        <ion-button
+          shape="round"
+          [fill]="currentSelectedOption === option ? 'solid' : 'clear'"
+          (click)="recordAnswer(currentQuestion, option)"
+          expand="full"
+          *ngFor="let option of currentQuestion.options"
+          >{{ option }}
+        </ion-button>
+      </div>
+
+      <div *ngIf="!currentQuestion.hasOptions" class="yay-nay-options">
+        <ion-input [(ngModel)]="textResponse" type="text"></ion-input>
+      </div>
+    </ion-card-content>
+
+    <ion-button
+      expand="full"
+      fill="outline"
+      *ngIf="currentQuestion.hasOptions"
+      (click)="moveToNextQuestion()"
+    >
+      Next
+    </ion-button>
+    <ion-button
+      expand="full"
+      fill="outline"
+      *ngIf="!currentQuestion.hasOptions"
+      (click)="recordTextualAnswer(currentQuestion, textResponse)"
+    >
+      Next
+    </ion-button>
+  </ion-card>
+
+  <ion-card *ngIf="hasQuizCompleted" class="score-wrapper">
+    <ion-card-content>
+      <div class="score">Expertise : {{ (score.expertise / 5) * 100 }}</div>
+      <div class="score">Motivation: {{ (score.motivation / 5) * 100 }}</div>
+      <div class="score">
+        Creative Thinking: {{ (score.creativity / 3) * 100 }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

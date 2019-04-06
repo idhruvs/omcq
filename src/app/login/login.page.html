@@ -9,14 +9,16 @@
     <ion-card>
       <ion-card-content>
         <div class="input-wrapper">
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
+          <form [formGroup]="loginForm">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="username" type="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input formControlName="password" type="password"></ion-input>
+            </ion-item>
+          </form>
         </div>
 
         <ion-button (click)="login()" expand="block">Login</ion-button>
